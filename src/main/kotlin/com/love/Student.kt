@@ -11,35 +11,27 @@ fun main(args: Array<String>) {
 
 class Student(var name: String, var english: Int, var math: Int) {
     fun print() {
-        println(
-            name + "\t" + english + "\t" + math + "\t"
-                    + getAverge() + "\t"
-                    + if (getAverge() >= 60) "Pass" else "failed"
-        )
-
+        println("$name\t$english\t$math\t${getAverge()}\t${passOrFaild()}\t${grading()}")
     }
 
-    fun getAverge(): Int {
-        return (english + math) / 2
+    fun passOrFaild()=if(getAverge()>=60) "Pass" else "Failed"
+
+    fun grading() = when (getAverge()) {
+        in 90..100 -> 'A'
+        in 80..89 -> 'B'
+        in 70..79 -> 'C'
+        in 60..69 -> 'D'
+        else -> 'F'
     }
 
-    fun highest(): Int {
-        var max = if (english > math) {
-            println("english")
-            english
-        } else {
-            println("math")
-            math
-        }
-//        var max=0
-//        if(english>math){
-//            println("english")
-//            println(english)
-//        }else{
-//            println("math")
-//            println(math)
-//        }
-        return max
+    fun getAverge() = (english + math) / 2
+
+    fun highest() = if (english > math) {
+        println("english")
+        english
+    } else {
+        println("math")
+        math
     }
 
     private fun userInput() {
