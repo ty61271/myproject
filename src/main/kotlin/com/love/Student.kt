@@ -11,12 +11,12 @@ fun main(args: Array<String>) {
 
 class Student(var name: String, var english: Int, var math: Int) {
     fun print() {
-        println("$name\t$english\t$math\t${getAverge()}\t${passOrFaild()}\t${grading()}")
+        println("$name\t$english\t$math\t${getAverage()}\t${passOrFaild()}\t${grading()}")
     }
 
-    fun passOrFaild()=if(getAverge()>=60) "Pass" else "Failed"
+    fun passOrFaild()=if(getAverage()>=60) "Pass" else "Failed"
 
-    fun grading() = when (getAverge()) {
+    fun grading() = when (getAverage()) {
         in 90..100 -> 'A'
         in 80..89 -> 'B'
         in 70..79 -> 'C'
@@ -24,7 +24,7 @@ class Student(var name: String, var english: Int, var math: Int) {
         else -> 'F'
     }
 
-    fun getAverge() = (english + math) / 2
+    fun getAverage() = (english + math) / 2
 
     fun highest() = if (english > math) {
         println("english")

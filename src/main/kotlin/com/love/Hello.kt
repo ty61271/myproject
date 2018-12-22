@@ -7,7 +7,6 @@ fun main(args: Array<String>) {
 //    val 不能改變資料
     val h = Human(weight = 66.5f, height = 1.7f)
     println(h.bmi())
-
     val c='A'
     println(c.toInt()>60)
 /*//    var 可變資料
