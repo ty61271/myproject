@@ -11,7 +11,25 @@ import java.util.Date;
 
 public class Tester {
     public static void main(String[] args) {
+        LocalDateTime enter=
+                LocalDateTime.of(2018,12,25,
+                        8,0,0);
+        LocalDateTime leave=
+                LocalDateTime.of(2018,12,25,
+                        10,7,0);
+        Car car=new Car("AAA-0001",enter);
+        car.setLeave(leave);
+        System.out.println(car.getDuration());
+        long hour= (long) Math.ceil(car.getDuration()/60.0);
+        System.out.println(hour);
+        System.out.println(hour*30);
+
 //        java8
+//        java8();
+//        java();
+    }
+
+    private static void java8() {
         Instant instant=Instant.now();
         System.out.println(instant);
 //        local
@@ -24,7 +42,6 @@ public class Tester {
         LocalDateTime other=
                 LocalDateTime.of(2018,9,27,9,27,27);
         System.out.println(other);
-//        java();
     }
 
     private static void java() {
